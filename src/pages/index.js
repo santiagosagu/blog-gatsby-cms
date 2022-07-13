@@ -13,9 +13,6 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Helmet>
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        </Helmet>
         <Seo title="All posts" />
         <Bio />
         <p>
@@ -30,6 +27,9 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
+      <Helmet>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      </Helmet>
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
